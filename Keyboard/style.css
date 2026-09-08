@@ -1,0 +1,94 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1e1e1e;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.keyboard-wrapper {
+  width: 600px;
+  max-width: 90%;
+}
+
+#textInput {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 8px;
+}
+
+.key {
+  background: #2c2c2c;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  box-shadow: 0 3px 0 #1a1a1a;
+  transition: 0.1s ease-in-out;
+}
+
+.key:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #1a1a1a;
+}
+
+.key.wide {
+  grid-column: span 2;
+}
+
+.key.extra-wide {
+  grid-column: span 4;
+  font-size: 16px;
+}
+
+.key.toggle-active {
+  background: #4caf50;
+}
+
+#copyBtn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#copyBtn:hover {
+  background: #45a049;
+}
+
+#copyMsg {
+  display: inline-block;
+  margin-left: 15px;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+@media (max-width: 700px) {
+  .keyboard {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
